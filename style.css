@@ -1,22 +1,135 @@
-body {
-  font-family: sans-serif;
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
 
-h1 {
-  font-size: 1.8rem;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom right, #ffecd2, #fcb69f); /* peachy summer gradient */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
   color: #333;
 }
 
+h1 {
+  font-size: 2.5rem;
+  color: #00796B; /* teal */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+p {
+  font-size: 1.1rem;
+  color: #4e4e4e;
+  max-width: 500px;
+  margin: 0 20px 30px;
+}
+
+
 #output {
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  background-color: white;
-  border-radius: 6px;
-  min-height: 80px;
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  font-size: 1.3rem;
+  color: #444;
+  max-width: 600px;
+  margin: 20px;
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+
+#fetchBtn {
+  background-color: #ff6f61; /* coral red */
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 111, 97, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#fetchBtn:hover {
+  background-color: #e4574f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #output {
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+
+  #fetchBtn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Floating flower decorations */
+<img src="https://cdn.pixabay.com/photo/2017/08/30/01/56/flower-2690531_960_720.png" class="flower top-left spin" />
+<img src="https://cdn.pixabay.com/photo/2017/11/06/22/14/flower-2923210_960_720.png" class="flower bottom-right pulse" />
+<img src="https://cdn.pixabay.com/photo/2017/08/30/01/56/flower-2690531_960_720.png" class="flower top-right float" />
+
+/* Decorations: floating flowers */
+.flower {
+  position: absolute;
+  width: 80px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.top-left {
+  top: 40px;
+  left: 30px;
+}
+
+.top-right {
+  top: 60px;
+  right: 40px;
+}
+
+.bottom-right {
+  bottom: 40px;
+  right: 20px;
+}
+
+/* Animations */
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Apply animation styles */
+.spin {
+  animation: spinSlow 20s linear infinite;
+}
+
+.pulse {
+  animation: pulse 5s ease-in-out infinite;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
 }

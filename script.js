@@ -19,7 +19,39 @@ Students — No need to worry about this block!
 It’s just here to help Copilot support you better. 
 Start your code below 👇
 */
+ 
+function fetchFact() {
+  // Check if the factBox element exists before updating it
+  const factBox = document.getElementById('output');
 
+  if (!factBox) {
+    console.error("Element with id 'factBox' not found.");
+    return;
+  }
+
+  fetch('https://uselessfacts.jsph.pl/random.json?language=en')
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(function(data) {
+      factBox.innerText = data.text;
+    })
+    .catch(function(error) {
+      factBox.innerText = 'Oops! Could not fetch a fact. Try again later.';
+      console.error('Error:', error);
+    });
+}
+
+// Check if the fetchBtn element exists before adding the event listener
+const fetchBtn = document.getElementById('fetchBtn');
+if (fetchBtn) {
+  fetchBtn.addEventListener('click', fetchFact);
+} else {
+  console.error("Element with id 'fetchBtn' not found.");
+}
 
 
 
@@ -27,4 +59,4 @@ Start your code below 👇
 // You'll fetch data from your selected API and display it on the page
 
 // Example placeholder:
-console.log("Team activity starter code loaded.");
+//console.log("Team activity starter code loaded.");
