@@ -77,9 +77,12 @@ p {
 }
 
 /* Floating flower decorations */
-<img src="https://cdn.pixabay.com/photo/2017/08/30/01/56/flower-2690531_960_720.png" class="flower top-left spin" />
-<img src="https://cdn.pixabay.com/photo/2017/11/06/22/14/flower-2923210_960_720.png" class="flower bottom-right pulse" />
-<img src="https://cdn.pixabay.com/photo/2017/08/30/01/56/flower-2690531_960_720.png" class="flower top-right float" />
+/* 
+<!-- Move these to your HTML and update the src attributes as below: -->
+<img src="images/flower-yellow-outline.png" class="flower top-left spin" />
+<img src="images/flower-pink-outline.png" class="flower bottom-right pulse" />
+<img src="images/flower-yellow-outline.png" class="flower top-right float" />
+*/
 
 /* Decorations: floating flowers */
 .flower {
